@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simpleapp-deployment
+  labels:
+    app: simpleapp
+spec:
+  selector:
+    matchLabels:
+      app: simpleapp
+  replicas: 3
+  template:
+    metadata:
+      name: simpleapp
+      labels:
+        app: simpleapp
+    spec:
+     containers:
+       - name: simpleapp
+         image: michelleamesquita/simpleapp
